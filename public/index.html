@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/css/nasa.css" />
   </head>
 
   <body>
@@ -47,133 +48,7 @@
       </div>
     </div>
 
-    <style>
-      body {
-        background: #020738;
-        font-family: 'Exo 2', sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        color: white;
-        height: 100vh;
-      }
-      #nasa_logo {
-        width: 200px;
-        padding: 5px;
-      }
-      .container.page {
-        border: 2px solid white;
-      }
-      .header {
-        height: 10vh;
-        width: 100vw;
-      }
-      .content {
-        height: 90vh;
-        width: 100vw;
-      }
-      .sidebar {
-        height: 100%;
-        width: 100%;
-        padding: 2px;
-        margin: 0 5px;
-        border-radius: 5px;
-        box-sizing: border-box;
-        border: 2px solid #ffffff;
-      }
-      .results {
-        height: 100%;
-        width: 100%;
-        padding: 2px;
-        border-radius: 5px;
-        margin: 0 5px;
-        border: 2px solid white;
-      }
-      #conversation td {
-        padding: 15px;
-        font-size: 28px;
-        color: white;
-      }
+    <script src="/js/nasa.js"></script>
 
-      #conversation p.computer {
-        text-align: left;
-        padding: 2px;
-        border-radius: 5px;
-        background: #313D7B;
-        max-width: 60%;
-      }
-
-      #userInput {
-        width: 80%;
-        height: 3em;
-        font-size: 24px;
-        position: absolute;
-        left: 25px;
-        bottom: 10px;
-        color: white;
-
-        background: #111b52;
-        border: 2px solid #ffffff;
-        border-radius: 20px;
-      }
-    </style>
-
-    <script>
-      console.log('hello world')
-      const SpeechRecognition = webkitSpeechRecognition //eslint-disable-line
-
-      function speak(text) {
-        console.log('speaking', text)
-
-        var msg = new SpeechSynthesisUtterance()
-        msg.text = text
-        window.speechSynthesis.speak(msg)
-      }
-
-      const conversation = d3.select('#conversation')
-
-      function addToConversation(text) {
-        conversation
-          .append('tr')
-          .append('td')
-          .append('p')
-          .classed('computer', true)
-          .text(text)
-      }
-
-      function doThing() {
-        speak('Hello, welcome to our nasa app')
-      }
-
-      addToConversation(
-        `We can help you location the information you need, read a collection of PDF files, summarize those files, and produce statistical reports through 3 simple steps.`
-      )
-
-      const getSpeech = () => {
-        const recognition = new SpeechRecognition()
-        recognition.lang = 'en-US'
-        recognition.start()
-
-        recognition.onresult = (event) => {
-          const speechResult = event.results[0][0].transcript
-          console.log(speechResult)
-          //document.querySelector("#speech-div").textContent = speechResult;
-
-          d3.select('#userInput').attr('value', speechResult)
-
-          getGif(speechResult)
-        }
-
-        recognition.onend = () => {
-          console.log('it is over')
-          recognition.stop()
-
-          getSpeech()
-        }
-
-        recognition.onerror = (event) => {
-          console.log('something went wrong: ' + event.error)
-        }
-      }
-    </script>
   </body>
 </html>

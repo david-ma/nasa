@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "baseUrl": "src",
+    "outDir": "dist",
+    "declaration": true,
+    "module": "AMD",
+    "target": "es2017",
+    "moduleResolution": "node",
+    "allowUmdGlobalAccess": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "removeComments": true,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "noImplicitReturns": false,
+    "noUnusedLocals": false,
+    "assumeChangesOnlyAffectDirectDependencies": true,
+    "incremental": true,
+    "lib": [ "esnext", "dom.iterable", "dom"]
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "config",
+    "models"
+  ]
+}
