@@ -222,7 +222,7 @@
         "affectsGlobalScope": true
       },
       "./src/js/nasa.ts": {
-        "version": "9d5c92b3a2b180e8094a272db468494c1d4baf77b6091f1137f3df42e092a64a",
+        "version": "24f84f48c80e7c77d0ca91625ffd9bb5c31abc01f0bac6a24657b459954dbe1d",
         "signature": "5c138b3cbd1c6b73dfdfe5bd35ce3d1602ba222759d9b06857e7e2d519e40fe8",
         "affectsGlobalScope": true
       },

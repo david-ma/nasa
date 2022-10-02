@@ -14,6 +14,8 @@ function addToConversation(text, who = 'bot') {
         .append('p')
         .classed(who, true)
         .text(text);
+    var objDiv = document.getElementById('divExample');
+    objDiv.scrollTop = objDiv.scrollHeight;
 }
 function doThing() {
     speak('Hello, welcome to our nasa app');
@@ -27,8 +29,11 @@ const getSpeech = () => {
         const speechResult = event.results[0][0].transcript;
         if (speechResult.split(' ')[0] === 'computer') {
             const validText = speechResult.split(' ').slice(1).join(' ');
-            addToConversation(validText, 'user');
-            d3.select('#userInput').attr('value', validText);
+            const firstWord = validText.split(' ')[0];
+            const restOfText = validText.split(' ').slice(1).join(' ');
+            const capitalisedFirstWord = firstWord.charAt(0).toUpperCase() + firstWord.slice(1);
+            const capitalisedText = capitalisedFirstWord + ' ' + restOfText + '.';
+            addToConversation(capitalisedText, 'user');
         }
         else {
             d3.select('#userInput').attr('value', `Voice commands must start with "computer"`);
@@ -41,7 +46,6 @@ const getSpeech = () => {
     };
     recognition.onerror = (event) => {
         console.log('something went wrong: ' + event.error);
-        d3.select('#userInput').attr('value', "I'm sorry, I didn't catch that");
         addToConversation("I'm sorry, I didn't catch that", 'bot');
     };
 };
