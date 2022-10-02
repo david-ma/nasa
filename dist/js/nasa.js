@@ -25,9 +25,14 @@ const getSpeech = () => {
     recognition.start();
     recognition.onresult = (event) => {
         const speechResult = event.results[0][0].transcript;
-        console.log(speechResult);
-        d3.select('#userInput').attr('value', speechResult);
-        addToConversation(speechResult, 'user');
+        if (speechResult.split(' ')[0] === 'computer') {
+            const validText = speechResult.split(' ').slice(1).join(' ');
+            addToConversation(validText, 'user');
+            d3.select('#userInput').attr('value', validText);
+        }
+        else {
+            d3.select('#userInput').attr('value', `Voice commands must start with "computer"`);
+        }
     };
     recognition.onend = () => {
         console.log('it is over');
@@ -36,11 +41,12 @@ const getSpeech = () => {
     };
     recognition.onerror = (event) => {
         console.log('something went wrong: ' + event.error);
+        d3.select('#userInput').attr('value', "I'm sorry, I didn't catch that");
+        addToConversation("I'm sorry, I didn't catch that", 'bot');
     };
 };
 function closeModal() {
     console.log('closing modal..?');
     d3.select('#modal_background').remove();
-    speak('Close modal');
     getSpeech();
 }

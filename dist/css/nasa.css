@@ -77,7 +77,7 @@ body {
 }
 #conversation td p.user {
   float: right;
-  background: #427b31;
+  border: 2px solid white;
 }
 
 #userInput {
