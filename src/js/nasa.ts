@@ -1,10 +1,7 @@
-
-
-console.log("Running Nasa.ts");
-
+console.log('Running Nasa.ts')
 
 // @ts-ignore
-const SpeechRecognition = webkitSpeechRecognition
+const speechStuff = webkitSpeechRecognition
 
 function speak(text) {
   console.log('speaking', text)
@@ -16,12 +13,12 @@ function speak(text) {
 
 const conversation = d3.select('#conversation')
 
-function addToConversation(text) {
+function addToConversation(text, who = 'bot') {
   conversation
     .append('tr')
     .append('td')
     .append('p')
-    .classed('computer', true)
+    .classed(who, true)
     .text(text)
 }
 
@@ -34,18 +31,16 @@ addToConversation(
 )
 
 const getSpeech = () => {
-  const recognition = new SpeechRecognition()
+  const recognition = new speechStuff()
   recognition.lang = 'en-US'
   recognition.start()
 
   recognition.onresult = (event) => {
     const speechResult = event.results[0][0].transcript
     console.log(speechResult)
-    //document.querySelector("#speech-div").textContent = speechResult;
 
     d3.select('#userInput').attr('value', speechResult)
-
-    // getGif(speechResult)
+    addToConversation(speechResult, 'user')
   }
 
   recognition.onend = () => {
@@ -60,11 +55,10 @@ const getSpeech = () => {
   }
 }
 
-// d3.post("https://ntrs.nasa.gov/api/citations/search", {
-//   'Content-Type': 'application/json',
-//   'body': {
-//     q: "hi tell me about the moon"
-//   }
-// }).results(d => {
-//   console.log("your results are:", d)
-// })
+
+function closeModal() {
+  console.log('closing modal..?')
+  d3.select('#modal_background').remove()
+  speak('Close modal')
+  getSpeech()
+}

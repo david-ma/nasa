@@ -7,6 +7,22 @@ body {
   height: 100vh;
 }
 
+#modal_background {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000000aa;
+  z-index: 100;
+}
+#modal_background #modal {
+  background: white;
+  color: black;
+  margin: auto;
+  width: 50vw;
+}
+
 #nasa_logo {
   width: 200px;
   padding: 5px;
@@ -50,13 +66,18 @@ body {
   font-size: 28px;
   color: white;
 }
-
-#conversation p.computer {
-  text-align: left;
+#conversation td p {
   padding: 2px;
   border-radius: 5px;
-  background: #313D7B;
   max-width: 60%;
+  text-align: left;
+}
+#conversation td p.bot {
+  background: #313D7B;
+}
+#conversation td p.user {
+  float: right;
+  background: #427b31;
 }
 
 #userInput {

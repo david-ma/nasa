@@ -222,8 +222,8 @@
         "affectsGlobalScope": true
       },
       "./src/js/nasa.ts": {
-        "version": "3c4f7ecc8ffbf935784d7e8447171a3013302fb644ee0f555088a47814557ba9",
-        "signature": "d489a0f7c55ed8812fd81bdb9c7f48fe01e15f79d87244918b8832e9ef44f83d",
+        "version": "87e418d39420eb8b0a57d85bb6f478f78f0526d1c41622ba8c4de614b7cdf27c",
+        "signature": "5c138b3cbd1c6b73dfdfe5bd35ce3d1602ba222759d9b06857e7e2d519e40fe8",
         "affectsGlobalScope": true
       },
       "../../node_modules/.pnpm/@babel+types@7.15.6/node_modules/@babel/types/lib/index.d.ts": {
@@ -2530,47 +2530,7 @@
       ]
     },
     "semanticDiagnosticsPerFile": [
-      [
-        "../../../../.nvm/versions/node/v16.1.0/lib/node_modules/typescript/lib/lib.dom.d.ts",
-        [
-          {
-            "file": "../../../../.nvm/versions/node/v16.1.0/lib/node_modules/typescript/lib/lib.dom.d.ts",
-            "start": 621632,
-            "length": 17,
-            "messageText": "Cannot redeclare block-scoped variable 'SpeechRecognition'.",
-            "category": 1,
-            "code": 2451,
-            "relatedInformation": [
-              {
-                "file": "./src/js/nasa.ts",
-                "start": 71,
-                "length": 17,
-                "messageText": "'SpeechRecognition' was also declared here.",
-                "category": 3,
-                "code": 6203
-              }
-            ]
-          },
-          {
-            "file": "../../../../.nvm/versions/node/v16.1.0/lib/node_modules/typescript/lib/lib.dom.d.ts",
-            "start": 623369,
-            "length": 17,
-            "messageText": "Cannot redeclare block-scoped variable 'SpeechRecognition'.",
-            "category": 1,
-            "code": 2451,
-            "relatedInformation": [
-              {
-                "file": "./src/js/nasa.ts",
-                "start": 71,
-                "length": 17,
-                "messageText": "'SpeechRecognition' was also declared here.",
-                "category": 3,
-                "code": 6203
-              }
-            ]
-          }
-        ]
-      ],
+      "../../../../.nvm/versions/node/v16.1.0/lib/node_modules/typescript/lib/lib.dom.d.ts",
       "../../../../.nvm/versions/node/v16.1.0/lib/node_modules/typescript/lib/lib.dom.iterable.d.ts",
       "../../../../.nvm/versions/node/v16.1.0/lib/node_modules/typescript/lib/lib.es2015.collection.d.ts",
       "../../../../.nvm/versions/node/v16.1.0/lib/node_modules/typescript/lib/lib.es2015.core.d.ts",
