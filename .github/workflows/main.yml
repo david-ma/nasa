@@ -34,6 +34,8 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          rsync -avzP --exclude=".*/" . $DEPLOY_FOLDER
-          echo "The DEPLOY_FOLDER is: $DEPLOY_FOLDER"
+
+      - name: Copy folder somewhere it can be served
+        run: rsync -avzP --exclude=".*/" . /usr/local/dev/Thalia/websites/nasa
+
 
