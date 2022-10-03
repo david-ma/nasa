@@ -222,8 +222,8 @@
         "affectsGlobalScope": true
       },
       "./src/js/nasa.ts": {
-        "version": "24f84f48c80e7c77d0ca91625ffd9bb5c31abc01f0bac6a24657b459954dbe1d",
-        "signature": "5c138b3cbd1c6b73dfdfe5bd35ce3d1602ba222759d9b06857e7e2d519e40fe8",
+        "version": "5190a39abae0562357d6a023b47c2046e8fb618aea40623320fceaa2404b26aa",
+        "signature": "a5a8d0f61d82d9ef8f5dc423c53f42eb11ac5a13f16173e3c3a71ddc24ac10e8",
         "affectsGlobalScope": true
       },
       "../../node_modules/.pnpm/@babel+types@7.15.6/node_modules/@babel/types/lib/index.d.ts": {

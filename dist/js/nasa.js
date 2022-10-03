@@ -14,13 +14,27 @@ function addToConversation(text, who = 'bot') {
         .append('p')
         .classed(who, true)
         .text(text);
-    var objDiv = document.getElementById('divExample');
-    objDiv.scrollTop = objDiv.scrollHeight;
+    if (who === 'user') {
+        botResponse();
+    }
+    else {
+        speak(text);
+    }
+}
+var responses = [
+    'There are 8 planets in our solar system',
+    'The sun is a star',
+    'The sun is the center of our solar system',
+    'The sun is 93 million miles away',
+    'The sun is 109 times the diameter of the earth',
+];
+function botResponse() {
+    addToConversation(responses.shift(), 'bot');
 }
 function doThing() {
     speak('Hello, welcome to our nasa app');
 }
-addToConversation(`We can help you location the information you need, read a collection of PDF files, summarize those files, and produce statistical reports through 3 simple steps.`);
+addToConversation(`NTRS includes hundreds of thousands of items containing scientific and technical information (STI) that were created or funded by NASA. How may I help you?`);
 const getSpeech = () => {
     const recognition = new speechStuff();
     recognition.lang = 'en-US';
