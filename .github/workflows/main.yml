@@ -35,4 +35,5 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           rsync -avzP --exclude=".*/" . $DEPLOY_FOLDER
+          echo "The DEPLOY_FOLDER is: $DEPLOY_FOLDER"
 
