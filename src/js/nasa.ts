@@ -25,7 +25,7 @@ function addToConversation(text, who = 'bot') {
   // objDiv.scrollTop = objDiv.scrollHeight
   // objDiv.scrollTop = objDiv.scrollHeight
 
-  if(who === 'user') {
+  if (who === 'user') {
     botResponse()
   } else {
     speak(text)
@@ -47,10 +47,6 @@ function botResponse() {
 function doThing() {
   speak('Hello, welcome to our nasa app')
 }
-
-addToConversation(
-  `NTRS includes hundreds of thousands of items containing scientific and technical information (STI) that were created or funded by NASA. How may I help you?`
-)
 
 const getSpeech = () => {
   const recognition = new speechStuff()
@@ -96,6 +92,10 @@ const getSpeech = () => {
 function closeModal() {
   console.log('closing modal..?')
   d3.select('#modal_background').remove()
-  // speak('Close modal')
+
+  addToConversation(
+    `NTRS includes hundreds of thousands of items containing scientific and technical information (STI) that were created or funded by NASA. How may I help you?`
+  )
+
   getSpeech()
 }
